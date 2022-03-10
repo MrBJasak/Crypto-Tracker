@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { vsCurrency, pageNumber, perPage, sparkLine } from '../CryptoList';
+import { vsCurrency, pageNumber, perPage, sparkLine } from '../Crypto/CryptoList';
 
 const instance = axios.create({ baseURL: 'https://api.coingecko.com/api/v3/' });
 

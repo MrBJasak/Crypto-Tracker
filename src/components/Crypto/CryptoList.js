@@ -25,6 +25,7 @@ const CryptoList = () => {
             {cryptoList.map((item) => (
                 <CryptoListElement
                     key={item.id}
+                    id={item.id}
                     symbol={item.symbol}
                     name={item.name}
                     currentPrice={item.current_price}
