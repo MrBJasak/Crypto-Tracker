@@ -1,0 +1,79 @@
+:root {
+    --rich-black-fogra-29: #031926ff;
+    --metallic-seaweed: #468189ff;
+    --green-sheen: #77aca2ff;
+    --opal: #9dbebbff;
+    --champagne: #f4e9cdff;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: #fff;
+}
+
+.centered {
+    margin: 3rem auto;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.centered {
+    margin: 3rem auto;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    text-decoration: none;
+    background-color: #3b60e4;
+    color: white;
+    border-radius: 4px;
+    padding: 0.75rem 1.5rem;
+    border: 1px solid #3b60e4;
+    cursor: pointer;
+}
+
+.btn:hover,
+.btn:active {
+    background-color: #3b60e4;
+    border-color: #3b60e4;
+}
+
+.btn--flat {
+    cursor: pointer;
+    font: inherit;
+    color: #3b60e4;
+    border: none;
+    background-color: none;
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+}
+
+.btn--flat:hover,
+.btn--flat:active {
+    background-color: #3b60e4;
+    color: white;
+}
+
+/* Color pallet 
+#EDD3C4
+
+#C8ADC0
+
+#7765E3
+
+#3B60E4
+
+#080708
+*/

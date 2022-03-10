@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import CryptoListElement from './CryptoListElement';
+export const vsCurrency = 'usd';
+export const perPage = 10;
+export const pageNumber = 1;
+export const sparkLine = 'true';
 // https://api.coingecko.com/api/v3/coins/list
 const CryptoList = () => {
     const [cryptoList, setCryptoList] = useState([]);
-    const perPage = 10;
-    const pageNumber = 1;
-    const sparkLine = 'true';
-    const vsCurrency = 'usd';
 
     useEffect(() => {
         axios
