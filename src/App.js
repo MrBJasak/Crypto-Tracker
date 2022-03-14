@@ -13,7 +13,7 @@ function App() {
                 <Routes>
                     <Route path={'/'} exact element={<Navigate to={'/list'} />} />
                     <Route path={'/list'} exact element={<CryptoList />} />
-                    <Route path={'/list/:cryptoId'} element={<CryptoListDetails />} />
+                    <Route path={'/list/:cryptoId/*'} element={<CryptoListDetails />} />
                     <Route path={'/trending'} exact element={<TrendingList />} />
                     <Route path={'*'} exact element={<NotFound />} />
                 </Routes>
