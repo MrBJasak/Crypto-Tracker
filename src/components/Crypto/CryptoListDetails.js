@@ -6,7 +6,7 @@ import { vsCurrency, pageNumber, perPage, sparkLine } from './CryptoList';
 import axios from 'axios';
 import CryptoListDetail from './CryptoListDetail';
 
-const CryptoListDetails = (props) => {
+const CryptoListDetails = ({ id, symbol, name, currentPrice }) => {
     const [cryptoDetails, setCryptoDetails] = useState([]);
     const params = useParams();
 
@@ -25,7 +25,6 @@ const CryptoListDetails = (props) => {
     }, []);
 
     const crypto = cryptoDetails.find((item) => item.id === params.cryptoId);
-    // console.log(crypto);
     if (!crypto) {
         return <CryptoNotFound />;
     }

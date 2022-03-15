@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import requests from '../lib/api';
+import React from 'react';
+// import requests from '../lib/api';
 
 const TrendingList = () => {
-    return <div></div>;
+    return <div>Soon...</div>;
 };
 
 export default TrendingList;

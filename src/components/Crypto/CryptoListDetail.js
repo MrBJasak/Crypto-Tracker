@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { requests } from '../lib/requests';
-import { Chart as ChartJS } from 'chart.js/auto';
 import LineChart from './LineChart';
 
-const CryptoListDetail = (props) => {
+const CryptoListDetail = ({ cryptoName, vsCurrency }) => {
     const [marketCaps, setMarketCaps] = useState([]);
     const [prices, setPrices] = useState([]);
     const [totalVolumes, setTotalVolumes] = useState([]);
+
+    const days = 7;
     const fetchChartData = () => {
         axios
             .get(
-                `https://api.coingecko.com/api/v3/coins/${props.cryptoName}/market_chart?vs_currency=${props.vsCurrency}&days=7`
+                `https://api.coingecko.com/api/v3/coins/${cryptoName}/market_chart?vs_currency=${vsCurrency}&days=${days}`
             )
             .then((response) => {
                 console.log(response.data);
@@ -40,11 +40,12 @@ const CryptoListDetail = (props) => {
             </div>
             <div className="chart" style={{ width: '500px', height: '200px' }}>
                 <LineChart
-                    name={props.cryptoName}
+                    name={cryptoName}
                     labels={marketCaps}
                     data={prices}
                     totalVolumes={totalVolumes}
-                    vsCurrency={props.vsCurrency}
+                    vsCurrency={vsCurrency}
+                    days={days}
                 />
             </div>
         </div>

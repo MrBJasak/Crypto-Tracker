@@ -1,19 +1,18 @@
 import React from 'react';
-import { vsCurrency } from './CryptoList';
 import styles from './CryptoListElement.module.css';
 import { Link } from 'react-router-dom';
 
-const CryptoListElement = (props) => {
+const CryptoListElement = ({ id, symbol, name, currentPrice, vsCurrency }) => {
     return (
         <div className={styles.item}>
             <h1 className="">
-                {props.name} {props.symbol}
+                {name} {symbol}
             </h1>
             <div className={styles.currentPrice}>
                 <p>
-                    {props.currentPrice} {vsCurrency.toUpperCase()}
+                    {currentPrice} {vsCurrency.toUpperCase()}
                 </p>
-                <Link className="btn" to={`/list/${props.id}`}>
+                <Link className="btn" to={`/list/${id}`}>
                     Show Details
                 </Link>
             </div>

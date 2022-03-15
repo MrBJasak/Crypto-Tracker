@@ -28,6 +28,10 @@ const CryptoList = () => {
                     symbol={item.symbol}
                     name={item.name}
                     currentPrice={item.current_price}
+                    vsCurrency={vsCurrency}
+                    perPage={perPage}
+                    pageNumber={pageNumber}
+                    sparkLine={sparkLine}
                 />
             ))}
         </div>
