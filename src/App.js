@@ -5,6 +5,7 @@ import TrendingList from './components/Trending/TrendingList';
 import Layout from './components/layout/Layout';
 import NotFound from './components/pages/NotFound';
 import CryptoListDetails from './components/Crypto/CryptoListDetails';
+import AuthForm from './components/Auth/AuthForm';
 
 function App() {
     return (
@@ -12,6 +13,7 @@ function App() {
             <Layout>
                 <Routes>
                     <Route path={'/'} exact element={<Navigate to={'/list'} />} />
+                    <Route path={'/auth'} exact element={<AuthForm />} />
                     <Route path={'/list'} exact element={<CryptoList />} />
                     <Route path={'/list/:cryptoId/*'} element={<CryptoListDetails />} />
                     <Route path={'/trending'} exact element={<TrendingList />} />

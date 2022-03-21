@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import LineChart from './LineChart';
 
 const CryptoListDetail = ({ cryptoName, vsCurrency }) => {
     const [marketCaps, setMarketCaps] = useState([]);
@@ -27,7 +26,7 @@ const CryptoListDetail = ({ cryptoName, vsCurrency }) => {
     useEffect(() => {
         fetchChartData();
     }, []);
-
+    console.log(marketCaps);
     return (
         <div>
             <div>
@@ -37,16 +36,6 @@ const CryptoListDetail = ({ cryptoName, vsCurrency }) => {
                 high_24h
                 <span>{crypto.low_24h}</span>
                 low_24h
-            </div>
-            <div className="chart" style={{ width: '500px', height: '200px' }}>
-                <LineChart
-                    name={cryptoName}
-                    labels={marketCaps}
-                    data={prices}
-                    totalVolumes={totalVolumes}
-                    vsCurrency={vsCurrency}
-                    days={days}
-                />
             </div>
         </div>
     );

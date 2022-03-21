@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Routes, useParams } from 'react-router-dom';
 import CryptoNotFound from '../pages/CryptoNotFound';
 import { useState, useEffect } from 'react';
-import { vsCurrency, pageNumber, perPage, sparkLine } from './CryptoList';
+// import { vsCurrency, pageNumber, perPage, sparkLine } from './CryptoList';
 import axios from 'axios';
 import CryptoListDetail from './CryptoListDetail';
 
@@ -12,9 +12,9 @@ const CryptoListDetails = ({ id, symbol, name, currentPrice }) => {
 
     const fetchCrypto = () => {
         axios
-            .get(
-                `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${vsCurrency}&order=market_cap_desc&per_page=${perPage}&page=${pageNumber}&sparkline=${sparkLine}`
-            )
+            .get
+            // `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${vsCurrency}&order=market_cap_desc&per_page=${perPage}&page=${pageNumber}&sparkline=${sparkLine}`
+            ()
             .then((response) => {
                 setCryptoDetails(response.data);
             });
@@ -25,6 +25,7 @@ const CryptoListDetails = ({ id, symbol, name, currentPrice }) => {
     }, []);
 
     const crypto = cryptoDetails.find((item) => item.id === params.cryptoId);
+
     if (!crypto) {
         return <CryptoNotFound />;
     }
@@ -36,8 +37,7 @@ const CryptoListDetails = ({ id, symbol, name, currentPrice }) => {
             </Routes>
             <div>
                 <h1>Crypto Details {params.cryptoId}</h1>
-                <CryptoListDetail cryptoName={params.cryptoId} vsCurrency={vsCurrency} />
-                {/* <div className={'chart'}>{crypto.sparkline_in_7d.price}</div> */}
+                <CryptoListDetail cryptoName={params.cryptoId} />
             </div>
         </>
     );

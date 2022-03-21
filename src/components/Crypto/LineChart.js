@@ -9,16 +9,6 @@ const BarChart = ({ data, labels, name, vsCurrency, days }) => {
         return string.charAt(0).toUpperCase() + string.slice(1);
     }
 
-    function pastDaysLabels(days) {
-        const today = new Date();
-        let last = new Date(today.getTime() - days * 24 * 60 * 60 * 1000);
-        console.log(last);
-
-        return today;
-    }
-    const a = pastDaysLabels(days);
-    console.log(a);
-
     return (
         <div style={{ height: '200px', width: '1000px' }}>
             <Line

@@ -1,37 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import styles from './MainNavigation.module.css';
-import { FaBitcoin } from 'react-icons/fa';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+import { createTheme } from '@mui/material/styles';
+import MenuLayout from './MenuLayout';
 
+import { FaBitcoin } from 'react-icons/fa';
 const MainNavigation = () => {
+    const appBarStyle = { background: '#666' };
     return (
-        <div className={styles.header}>
-            <div className={styles.logo}>
-                <Link style={{ textDecoration: 'none', color: 'white' }} to={'/'}>
-                    <FaBitcoin /> Logo
-                </Link>
-            </div>
-            <div className={styles.nav}>
-                <ul>
-                    <li>
-                        <NavLink
-                            to={'/list'}
-                            className={(navMain) => (navMain.isActive ? styles.active : '')}
-                        >
-                            Crypto list
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink
-                            to={'/trending'}
-                            className={(navMain) => (navMain.isActive ? styles.active : '')}
-                        >
-                            Trending List
-                        </NavLink>
-                    </li>
-                </ul>
-            </div>
-        </div>
+        <Box sx={{ flexGrow: 1 }}>
+            <AppBar style={{ appBarStyle }} position={'static'}>
+                <Toolbar>
+                    <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>
+                        <Link style={{ textDecoration: 'none', color: 'white' }} to={'/'}>
+                            <FaBitcoin style={{ marginRight: '10px' }} />
+                            Crypto Tracker
+                        </Link>
+                    </Typography>
+
+                    <MenuLayout />
+                </Toolbar>
+            </AppBar>
+        </Box>
     );
 };
 
